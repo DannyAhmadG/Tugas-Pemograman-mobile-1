@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danny Ahmad G</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 90%;
+            border-top: 4px solid #38bdf8;
+        }
+
+        h1 {
+            color: #38bdf8;
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+
+        .btn {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #7dd3fc;
+        }
+
+        #output-waktu {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #0f172a;
+            border-radius: 6px;
+            color: #4ade80;
+            font-family: monospace;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 1 Heading -->
+        <h1>Halo, Saya Danny Ahmad G</h1>
+
+        <!-- Paragraf 1 -->
+        <p>
+            Saya adalah seorang mahasiswa yang sedang mendalami bidang teknik dan teknologi informasi, dengan fokus utama pada eksplorasi sistem serta pengembangan web dasar.
+        </p>
+
+        <!-- Paragraf 2 -->
+        <p>
+            Melalui halaman web sederhana ini, saya belajar mengimplementasikan struktur dasar HTML, mempercantik tampilan dengan desain warna CSS, serta menambahkan logika interaktif menggunakan JavaScript.
+        </p>
+
+        <!-- Paragraf 3 -->
+        <p id="status-teks">
+            Status saat ini: Siap mengeksplorasi teknologi baru dan menyelesaikan berbagai tantangan pemrograman.
+        </p>
+
+        <!-- Tombol Interaksi JavaScript -->
+        <button class="btn" onclick="jalankanInteraksi()">Cek Waktu & Ubah Status</button>
+
+        <!-- Area Hasil JavaScript -->
+        <div id="output-waktu"></div>
+    </div>
+
+    <script>
+        function jalankanInteraksi() {
+            // Menampilkan tanggal dan jam saat ini
+            const sekarang = new Date();
+            const formatWaktu = sekarang.toLocaleString('id-ID', {
+                dateStyle: 'full',
+                timeStyle: 'medium'
+            });
+
+            const kotakWaktu = document.getElementById('output-waktu');
+            kotakWaktu.style.display = 'block';
+            kotakWaktu.innerText = "Waktu akses: " + formatWaktu;
+
+            // Mengubah teks paragraf ke-3
+            const paragrafStatus = document.getElementById('status-teks');
+            paragrafStatus.innerText = "Status saat ini: Tombol berhasil diklik dan JavaScript berjalan dengan baik!";
+            paragrafStatus.style.color = "#38bdf8";
+
+            // Menampilkan pesan pop-up alert
+            alert("Halo Danny! Interaksi JavaScript berhasil dijalankan.");
+        }
+    </script>
+
+</body>
+</html>
